@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 move;
     [SerializeField] public Animator animator;
     [SerializeField] public int damageAmount = 20;
-   
+
 
     private int HP = 100;
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-       
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -34,22 +34,29 @@ public class PlayerController : MonoBehaviour
         if (move.x != 0 || move.y != 0)
         {
             animator.SetBool("isRunning", true);
-        Vector3 movement = new Vector3(move.x, 0f, move.y);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            Vector3 movement = new Vector3(move.x, 0f, move.y);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            transform.Translate(movement * speed * Time.deltaTime, Space.World);
         }
-        else{
+        else
+        {
             animator.SetBool("isRunning", false);
         }
     }
 
     private void FixedUpdate()
     {
+
         heathBar.value = HP;
+        if (HP <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            Movement();
+        }
 
-
-
-        Movement();
 
     }
 
@@ -57,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyController>().TakeDamage(damageAmount);
+            other.GetComponent<Enemy>().TakeDamage(damageAmount);
             animator.SetTrigger("Slash");
         }
     }
@@ -67,6 +74,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-   
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+    }
+
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 

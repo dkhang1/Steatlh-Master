@@ -360,7 +360,6 @@
 "Assets/Scripts/Camera/CameraController.cs"
 "Assets/Scripts/Camera/FollowCamera.cs"
 "Assets/Scripts/Character/Enemy/Enemy.cs"
-"Assets/Scripts/Character/Enemy/EnemyController.cs"
 "Assets/Scripts/Character/Enemy/Path.cs"
 "Assets/Scripts/Character/Enemy/StateMachine.cs"
 "Assets/Scripts/Character/Enemy/States/AttackState.cs"
@@ -369,6 +368,8 @@
 "Assets/Scripts/Character/Enemy/VisionCone.cs"
 "Assets/Scripts/Character/Player/MoneyCollect.cs"
 "Assets/Scripts/Character/Player/PlayerController.cs"
+"Assets/Scripts/Enviroment/Bullet.cs"
+"Assets/Scripts/Enviroment/FinishLine.cs"
 "Assets/Scripts/Enviroment/Money.cs"
 "Assets/Shared/Character.cs"
 -langversion:9.0

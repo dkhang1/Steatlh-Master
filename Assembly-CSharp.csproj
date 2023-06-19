@@ -65,7 +65,6 @@
     <Compile Include="Assets/Scripts/Camera/FollowCamera.cs" />
     <Compile Include="Assets/Scripts/Character/Enemy/Enemy.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
-    <Compile Include="Assets/Scripts/Character/Enemy/EnemyController.cs" />
     <Compile Include="Assets/Scripts/Character/Enemy/States/BaseState.cs" />
     <Compile Include="Assets/Low Poly Guns/Scripts/GunView.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
@@ -79,6 +78,8 @@
     <Compile Include="Assets/Scripts/Character/Enemy/States/AttackState.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
     <Compile Include="Assets/Scripts/Character/Enemy/States/PatrolState.cs" />
+    <Compile Include="Assets/Scripts/Enviroment/Bullet.cs" />
+    <Compile Include="Assets/Scripts/Enviroment/FinishLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -6,7 +6,7 @@ public class PatrolState : BaseState
 {
     public int wayPointIndex = 0;
     public float waitTimer;
-   
+
     public override void Enter()
     {
 
@@ -14,11 +14,19 @@ public class PatrolState : BaseState
 
     public override void Perform()
     {
-        PatrolCycle();
+        if (enemy.HP <= 0) return;
+
         if (enemy.IsPlayerInSight())
         {
             stateMachine.ChangeState(new AttackState());
         }
+        
+            PatrolCycle();
+
+        
+
+
+
     }
 
     public override void Exit()
@@ -34,7 +42,6 @@ public class PatrolState : BaseState
             enemy.animator.SetBool("isPatrolling", false);
             if (waitTimer > 3)
             {
-
                 if (wayPointIndex < enemy.path.wayPoints.Count - 1)
                 {
                     wayPointIndex++;
