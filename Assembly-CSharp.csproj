@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DD9D61A8-21FE-650C-AD69-3CA3B2E7F6D3}</ProjectGuid>
+    <ProjectGuid>{9DBDB1FB-231B-C774-7CE8-18E648B34630}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,7 +56,29 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Shared/Character.cs" />
+    <Compile Include="Assets/Low Poly Guns/Scripts/GunsMenu.cs" />
+    <Compile Include="Assets/Scripts/Enviroment/Money.cs" />
+    <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
+    <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
     <Compile Include="Assets/Scripts/Camera/CameraController.cs" />
+    <Compile Include="Assets/Scripts/Camera/FollowCamera.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/Enemy.cs" />
+    <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/EnemyController.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/States/BaseState.cs" />
+    <Compile Include="Assets/Low Poly Guns/Scripts/GunView.cs" />
+    <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
+    <Compile Include="Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
+    <Compile Include="Assets/Scripts/Character/Player/MoneyCollect.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/StateMachine.cs" />
+    <Compile Include="Assets/Scripts/Character/Player/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/Path.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/VisionCone.cs" />
+    <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/States/AttackState.cs" />
+    <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
+    <Compile Include="Assets/Scripts/Character/Enemy/States/PatrolState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -713,8 +735,14 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
